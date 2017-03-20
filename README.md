@@ -1,9 +1,24 @@
-Practice of Leetcode(Implement by JS)
+Practice of [Leetcode](https://leetcode.com/problemset/algorithms/) (Implement by JS)
 
-1. [Two Sum](https://leetcode.com/problems/two-sum/#/description)
-We can implement the function by Map. 
-The 'key' in map stored the value of (target - nums[i]), it means another value we are looking forword to achieve target with current number.
-The 'val' in map stored the index of current number, if current number achieved target in future, we can get its index by 'val'.
-For each numbers in arr, first we check if it meet demand by ```if(targetMap.has(num))```.
-Expression return true means the 'num' is the wanted, then we can return array [targetMap.get(nums[i]), i].
-If expression return false, we need store (target - nums[i], i) in targeMap to search if next value can meet the demand with numbers in our targetMap.
+1. [Two Sum](https://leetcode.com/problems/two-sum/#/description)  
+We can implement the function by Map.  
+The 'key' in map stored the value of (target - nums[i]), it means another value we are looking forword to achieve target with current number.  
+The 'val' in map stored the index of current number, if current number achieved target in future, we can get its index by 'val'.  
+For each numbers in arr, first we check if it meet demand by ```if(targetMap.has(num))```.  
+Expression return true means the 'num' is the wanted, then we can return array [targetMap.get(nums[i]), i].  
+If expression return false, we need store (target - nums[i], i) in targeMap to search if next value can meet the demand with numbers in our targetMap.  
+
+2. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/#/description)  
+There are two things we need to watch out:  
+--Two lists' length may different.  
+--Each index may create add carry after added.  
+We can use a var ```needPlus``` indicate if add carry needed and init it to 0.  
+Traversal two list, check if extra plus need to each sum, then push the result to array.  
+Don't forget check ```needPlus``` again in the end.  
+
+3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/#/description)  
+We can use an array to store current longest substring without repeat.  
+The arr inited as [] at first, then go through the string.  
+If the character in string don't exist in arr, store it.
+Else store arr's current length if it's longer then before, and drop all elements in arr from 0 to x(the position where arr[x] equals the character), then push character into arr.  
+Don't forget to compare arr's length with history longest length at last.
