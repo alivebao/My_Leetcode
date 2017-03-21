@@ -21,4 +21,11 @@ We can use an array to store current longest substring without repeat.
 The arr inited as [] at first, then go through the string.  
 If the character in string don't exist in arr, store it.
 Else store arr's current length if it's longer then before, and drop all elements in arr from 0 to x(the position where arr[x] equals the character), then push character into arr.  
-Don't forget to compare arr's length with history longest length at last.
+Don't forget to compare arr's length with history longest length at last.  
+
+4. [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/#/description)  
+Change the question to find Kth number in two sorted array, try to write a function getKth(a, b, k).  
+Compare a[k/2] and b[k/2](If k/2 > a.length then compare a[a.length - 1] and b[k/2]. Assume a.length is lower than b here)  
+if a[k/2] == b[k/2], we can return a[k/2] or b[k/2] directly.
+else if a[k/2] < b[k/2], it means a[0]~a[k/2 - 1] is all lower than b[k/2]~b[b.length - 1], so Kth must not in a[0]~a[k/2 - 1], we can continue find reminder nums -> getKth(a.slice(x), b, k - x), x equals k/2 or a.length.
+If a[k/2] > b[k/2] is the same logic.
