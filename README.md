@@ -28,4 +28,13 @@ Change the question to find Kth number in two sorted array, try to write a funct
 Compare a[k/2] and b[k/2](If k/2 > a.length then compare a[a.length - 1] and b[k/2]. Assume a.length is lower than b here)  
 if a[k/2] == b[k/2], we can return a[k/2] or b[k/2] directly.
 else if a[k/2] < b[k/2], it means a[0]~a[k/2 - 1] is all lower than b[k/2]~b[b.length - 1], so Kth must not in a[0]~a[k/2 - 1], we can continue find reminder nums -> getKth(a.slice(x), b, k - x), x equals k/2 or a.length.
-If a[k/2] > b[k/2] is the same logic.
+If a[k/2] > b[k/2] is the same logic.  
+
+5. [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/#/description)  
+Assume each character in string as a center of palindromic substring, check longest pali str of them.  
+We need consider two situations - longest string like "aba" and "abba".  
+
+6. [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/#/description)  
+Just try to find pattern :
+All main number space is 2 * (n - 1).
+Besides that, center row(except first and last line) need add an extra space 2 * (n - i - 1).  
