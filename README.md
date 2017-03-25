@@ -38,3 +38,16 @@ We need consider two situations - longest string like "aba" and "abba".
 Just try to find pattern :
 All main number space is 2 * (n - 1).
 Besides that, center row(except first and last line) need add an extra space 2 * (n - i - 1).  
+
+7. [Reverse Integer](https://leetcode.com/problems/reverse-integer/#/description)  
+Use the reverse() of array - change type from number to string(String(xxx)), then change string to array(split(""))
+It's like: ```String(Math.abs(x)).split("").reverse().join("");```
+If result > Math.pow(2, 31) return 0.
+If x > 0 return result, else return -result.  
+
+8. [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/#/solutions)  
+Just don't forget MAX&MIN limit.  
+
+9. [Palindrome Number](https://leetcode.com/problems/palindrome-number/#/description)  
+Palindrome Number is a number that has the same value with its reverse, we can easily get the result by:  
+```return String(x) == String(x).split("").reverse().join("");```
