@@ -66,9 +66,36 @@ for(var i = 0; i < p.length; i++){
 ```  
 Then:  
 If p[i] == s[j] || p[i] == '.': result[i][j] = result[i - 1][j - 1]  
-If p[i] == '*' there has two situation:  
+If p[i] == '\*' there has two situation:  
   if p[i - 1] != s[j] && p[i - 1] != '.' : result[i][j] = result[i][j - 2];//a* counts as empty  
   else result[i][j] = result[i - 1][j] || result[i][j - 1] || result[i][j - 2];  
     result[i - 1][j] ===> a* counts as multiple a  
-    result[i][j - 1] ===> a* counts as single a
-    result[i][j - 2] ===> a* counts as empty
+    result[i][j - 1] ===> a* counts as single a  
+    result[i][j - 2] ===> a* counts as empty  
+	
+11. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/#/description)  
+Init the maxArea = (height.length - 1) * Math.min(height[0], height[height.length - 1]);  
+We konw that area = width * height.  
+As we inited maxArea has the max width, and now we want to check if there exist bigger area with smaller width, at this situation the area must has a bigger height.  
+If we move the index with bigger height[x], the area is impossible to increase since width is miner while height of area is still limited.  
+So we try to move the index with smaller height[x] and replace its value:  
+```
+var i = 0, j = height.length - 1;  
+if height[i] > height[j]:  j--;
+else:  i++;  
+maxSize = Math.max(maxSize, (j - i) * Math.min(height[i], height[j]));
+```  
+
+12. [Integer to Roman](https://leetcode.com/problems/integer-to-roman/#/description)  
+```
+//10000
+var M = ["", "M", "MM", "MMM"];
+//1000
+var C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+//100
+var X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+//10
+var I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+//cal by / and %
+return M[Math.floor(num / 1000)] + C[Math.floor(num % 1000 / 100)] + X[Math.floor(num % 100 / 10)] + I[Math.floor(num % 10)];
+```
