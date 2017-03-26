@@ -50,4 +50,25 @@ Just don't forget MAX&MIN limit.
 
 9. [Palindrome Number](https://leetcode.com/problems/palindrome-number/#/description)  
 Palindrome Number is a number that has the same value with its reverse, we can easily get the result by:  
-```return String(x) == String(x).split("").reverse().join("");```
+```return String(x) == String(x).split("").reverse().join("");```  
+
+10. [Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/#/description)  
+Solve it by DP.  
+We can use a two-dimensional array result[i][j]:  
+Initial:  
+```
+result[0][0] = true;  
+for(var i = 0; i < p.length; i++){
+	if(p[i] == '*'){
+		result[0][i + 1] = result[0][i] || result[0][i - 1];
+	}
+}
+```  
+Then:  
+If p[i] == s[j] || p[i] == '.': result[i][j] = result[i - 1][j - 1]  
+If p[i] == '*' there has two situation:  
+  if p[i - 1] != s[j] && p[i - 1] != '.' : result[i][j] = result[i][j - 2];//a* counts as empty  
+  else result[i][j] = result[i - 1][j] || result[i][j - 1] || result[i][j - 2];  
+    result[i - 1][j] ===> a* counts as multiple a  
+    result[i][j - 1] ===> a* counts as single a
+    result[i][j - 2] ===> a* counts as empty
