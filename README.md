@@ -98,4 +98,14 @@ var X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
 var I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
 //cal by / and %
 return M[Math.floor(num / 1000)] + C[Math.floor(num % 1000 / 100)] + X[Math.floor(num % 100 / 10)] + I[Math.floor(num % 10)];
-```
+```  
+
+13. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/#/description)  
+Init result to first number of s, then use two point ergodic s(pre and cur):  
+if pre <= cur: result += cur;  
+else: result += cur - 2 * pre;
+
+14. [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/#/description)  
+First sort the strs by strs.sort().  
+Then compare the first and last strs' longest commen prefix.  
+Return result.  
