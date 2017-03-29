@@ -109,3 +109,15 @@ else: result += cur - 2 * pre;
 First sort the strs by strs.sort().  
 Then compare the first and last strs' longest commen prefix.  
 Return result.  
+
+15. [3Sum](https://leetcode.com/problems/3sum/#/description)  
+Sort the array, then check all values by below rules:  
+when checking arr[i], set j = i + 1, k = arr.length - 1.  
+If(arr[i] + arr[j] + arr[k] > 0), it means sum need lower number, so execute k--.  
+Else if(arr[i] + arr[j] + arr[k] < 0), it means sum need higher number, so execute j--.  
+Else push [arr[i], arr[j], arr[k]] to result.  
+We use the character of sorted arr here. Besides that, we need to avoid the same number.  
+
+16. [3Sum Closest](https://leetcode.com/problems/3sum-closest/#/description)  
+Just like last exercise.  
+
