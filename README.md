@@ -121,3 +121,9 @@ We use the character of sorted arr here. Besides that, we need to avoid the same
 16. [3Sum Closest](https://leetcode.com/problems/3sum-closest/#/description)  
 Just like last exercise.  
 
+17. [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/#/description)  
+Init resultArr to [""];  
+Assume digits is "23",  
+for 2, we can get ["a", "b", "c"] in resultArr.  
+for 3, we delete the first element in resultArr("a"), then combine "a" and ["d", "e", "f"], then push them to resultArr, now the resultArr is: ["b","c","ad","ae","af"].  
+And do the same operat to "b" and "c"(All elements in resultArr): delete first element in resultArr("b") ... ["c","ad","ae","af","bd","be","bf"] ... ["ad","ae","af","bd","be","bf","cd","ce","cf"]
