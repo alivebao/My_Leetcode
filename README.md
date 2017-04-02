@@ -126,4 +126,9 @@ Init resultArr to [""];
 Assume digits is "23",  
 for 2, we can get ["a", "b", "c"] in resultArr.  
 for 3, we delete the first element in resultArr("a"), then combine "a" and ["d", "e", "f"], then push them to resultArr, now the resultArr is: ["b","c","ad","ae","af"].  
-And do the same operat to "b" and "c"(All elements in resultArr): delete first element in resultArr("b") ... ["c","ad","ae","af","bd","be","bf"] ... ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+And do the same operat to "b" and "c"(All elements in resultArr): delete first element in resultArr("b") ... ["c","ad","ae","af","bd","be","bf"] ... ["ad","ae","af","bd","be","bf","cd","ce","cf"]  
+
+18. [4Sum](https://leetcode.com/problems/4sum/#/description)  
+Just like 15-3Sum.  
+First we sort the arr, then for each elements in arr, execute: threeSum(arr.splice(i), target - arr[i]).  
+
