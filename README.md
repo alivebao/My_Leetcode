@@ -131,4 +131,26 @@ And do the same operat to "b" and "c"(All elements in resultArr): delete first e
 18. [4Sum](https://leetcode.com/problems/4sum/#/description)  
 Just like 15-3Sum.  
 First we sort the arr, then for each elements in arr, execute: threeSum(arr.splice(i), target - arr[i]).  
+  
+19. [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/#/description)  
+First get then length of List.  
+Then get nth node want to remove in list.  
+Delete the node by a pre and a cur pointer, delete by pre.next = cur.next;  
 
+20. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/#/description)  
+Try implement the function by stack.  
+
+21. [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/#/description)  
+```javascript
+...
+while(l1 && l2){
+	...
+}
+while(l1){
+	...
+}
+while(l2){
+	...
+}
+...
+```
