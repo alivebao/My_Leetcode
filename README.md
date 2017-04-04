@@ -153,4 +153,39 @@ while(l2){
 	...
 }
 ...
+```  
+
+22. [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/#/description)  
+Backtracking:  
+  
+We can create a function generateFun(leftNum, rightNum, s, resultArr).  
+leftNum means reminder unused left parenthese, rightNum means reminder unused right parenthese.  
+s means current string create by used left&right Number, resultArr means the final valid parentheses array.  
+In generateFun, if(leftNum === 0 && rightNum === 0), it means all left and right parenthese used up, we get a valid parenthese, so resultArr.push(s).  
+if(leftNum > rightNum), it means numbers of left parenthese in s less than right parenthese, it is invalid, so return.  
+if(leftNum > 0), try generateFun(leftNum - 1, rightNum, s + '(', result).  
+if(rightNum > 0), try generateFun(leftNum, rightNum - 1, s + ')', result).  
+  
+In backtracking,  
+We list all possibilities:  
+```js
+leftNum == 0 && rightNum == 0 / leftNum > 0 / rightNum > 0.  
 ```
+And delete invalid items:
+```js
+if(leftNum > rightNum){
+	return;
+}
+```  
+
+22. [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/#/description)  
+According [21-Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/#/description), we can get a function mergeTwoLists, then ergodic all elements in lists get the result.  
+Besides that, we can implement it by MERGE instead of ergodic to get lower time complexity( O(KN) -> O(NlogK) ):  
+```js
+var length = lists.length;
+var mid = Math.floor((length - 1) / 2);
+var l1 = mergeKLists(lists.slice(0, mid + 1));
+var l2 = mergeKLists(lists.slice(mid + 1, length));
+var result = mergeTwoLists(l1, l2);
+return result;
+``` 
