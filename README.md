@@ -178,7 +178,7 @@ if(leftNum > rightNum){
 }
 ```  
 
-22. [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/#/description)  
+23. [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/#/description)  
 According [21-Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/#/description), we can get a function mergeTwoLists, then ergodic all elements in lists get the result.  
 Besides that, we can implement it by MERGE instead of ergodic to get lower time complexity( O(KN) -> O(NlogK) ):  
 ```js
@@ -188,4 +188,18 @@ var l1 = mergeKLists(lists.slice(0, mid + 1));
 var l2 = mergeKLists(lists.slice(mid + 1, length));
 var result = mergeTwoLists(l1, l2);
 return result;
-``` 
+```  
+
+24. [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/#/description)  
+Recursion  
+```javascript
+var swapPairs = function(head) {
+    if(!head || !head.next){
+        return head;
+    }
+    var n = head.next;
+    head.next = swapPairs(head.next.next);
+    n.next = head;
+    return n;
+};  
+```  
