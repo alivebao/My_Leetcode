@@ -206,3 +206,30 @@ var swapPairs = function(head) {
 
 25. [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/#/description)  
 Recursion, just like last exercise.  
+
+26. [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/#/description)  
+```javascript
+var removeDuplicates = function(nums) {
+    var count = 0;
+    if(!nums || nums.length === 0){
+        return count;
+    }
+    count =  nums.length;
+    for(var i = 1 ; i < nums.length;){
+        if(nums[i - 1] === nums[i]){
+            nums.splice(i, 1);
+            count--;
+        }else{
+            i++;
+        }
+    }
+    return count;
+};  
+```  
+
+27. [Remove Element](https://leetcode.com/problems/remove-element/#/description)  
+Sort the array, then get the first and last index of val, splice the arr:  
+```javascript
+arr.splice(iBegin, iEnd - iBegin);
+return arr.length;
+```
