@@ -233,3 +233,6 @@ Sort the array, then get the first and last index of val, splice the arr:
 arr.splice(iBegin, iEnd - iBegin);
 return arr.length;
 ```
+
+28. [Implement strStr()](https://leetcode.com/problems/implement-strstr/#/description)  
+Ergodic  
