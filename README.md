@@ -236,3 +236,35 @@ return arr.length;
 
 28. [Implement strStr()](https://leetcode.com/problems/implement-strstr/#/description)  
 Ergodic  
+
+29. [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/#/description)  
+Implement the function by recursion - getPositiveDivideResult(d1, d2).  
+Assume both d1 and d2 are positive number, cal the result of d1 / d2:  
+If d1 < d2, return 0.  
+Else set:  
+```javascript
+d2 *= d2;
+t = 1;
+```
+while(d2 * 2 < d1), execute:  
+```javascript
+d2 *= d2;
+t *= 2;
+```
+until d2 * 2 > d1  
+then calculate the result of (d1 - cur(d2)) / ori(d2)  
+the result of d1 / d2 is (t + getPositiveDivideResult(d1 - cur(d2), ori(d2)))  
+```javascript
+var getPositiveDivideResult = function(d1, d2){
+  if(d1 < d2){
+    return 0;
+  }
+  var ori = d2;
+  var t = 1;
+  while(d1 > d2 * 2){
+    d2 *= 2;
+    t *= 2;
+  }
+  return t + getPositiveDivideResult(d1 - d2, ori);
+}
+```
