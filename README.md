@@ -270,4 +270,7 @@ var getPositiveDivideResult = function(d1, d2){
 ```  
 
 33. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/#/description)  
-Divide search: devide the arr to two sorted arrays, then implement search function by a assistant function - binary chop
+Divide search: devide the arr to two sorted arrays, then implement search function by a assistant function - binary chop  
+
+34. [Search for a Range](https://leetcode.com/problems/search-for-a-range/#/description)  
+The same way with last exercise.  
