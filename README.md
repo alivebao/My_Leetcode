@@ -269,8 +269,21 @@ var getPositiveDivideResult = function(d1, d2){
 }
 ```  
 
+31. [Next Permutation](https://leetcode.com/problems/next-permutation/#/description)  
+Need to learn the character of next permutation.  
+52431 -> 53124  
+To the nums, we can change "52431" to "53124" by:  
+Observe 52431 in a reverse order: 1 < 3, 3 < 4, that is OK. But 2 is smaller than 4, so we need to update the position of "2".  
+And with which number?  
+Observe "431", 4 > 2, 3 > 2, 1 < 2. We need to change the num in "431" which is just bigger than "2", it is "3" in "431".  
+Update position of "2" and "3", now the nums is "53421".  
+Finally, reverse the string of "421", we got the final result: "53124".  
+  
 33. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/#/description)  
 Divide search: devide the arr to two sorted arrays, then implement search function by a assistant function - binary chop  
 
 34. [Search for a Range](https://leetcode.com/problems/search-for-a-range/#/description)  
+The same way with last exercise.  
+
+35. [Search Insert Position](https://leetcode.com/problems/search-insert-position/#/description)  
 The same way with last exercise.  
